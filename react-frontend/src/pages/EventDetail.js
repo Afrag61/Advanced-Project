@@ -1,4 +1,4 @@
-import EventItem from "./../components/EventItem";
+import EventItem from "../components/EventItem";
 import { useRouteLoaderData, redirect } from "react-router-dom";
 
 const EventDetailsPage = () => {
@@ -10,7 +10,7 @@ const EventDetailsPage = () => {
 
 export default EventDetailsPage;
 
-export const Loader = async ({ request, params }) => {
+export const loader = async ({ request, params }) => {
   const id = params.eventId;
 
   const response = await fetch(`http://192.168.1.3:8080/events/${id}`);

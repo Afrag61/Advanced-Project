@@ -17,7 +17,7 @@ function EventsPage() {
   );
 }
 
-export const Loader = async () => {
+export const loader = async () => {
   const response = await fetch("http://192.168.1.3:8080/events");
 
   if (!response.ok) {
