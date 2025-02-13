@@ -1,0 +1,29 @@
+defer() and json() with React Router v7
+In this section, you learned about the json() utility method and the defer() method.
+
+Both methods are no longer supported / needed when using React Router v7 (check your package.json file).
+
+Instead of using json(), you should construct a Response manually, as shown in this section:
+
+new Response(JSON.stringify({ message: 'Could not fetch events.' }), {
+  status: 500,
+});
+Instead of using defer(), you can directly return an object that contains unresolved promises.
+
+I.e., instead of writing this code:
+
+export async function loader() {
+  return defer({
+    events: loadEvents(),
+  });
+}
+Use this code with React Router v7:
+
+export async function loader() {
+  return {
+    events: loadEvents(),
+  };
+}
+Also make sure to remove the defer import at the top of the file.
+
+That's all! No further changes are needed, you still use the <Await> component as shown in this section. And all the other code also stays & works the way you learned it.
