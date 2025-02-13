@@ -1,5 +1,9 @@
+import PageContent from "../components/PageContent";
+
 const HomePage = () => {
-  return <h1>Home Page</h1>;
+  return <PageContent title="Welcome to Ahmed Frag Events">
+    <p>Browse All our Amazing Events!</p>
+  </PageContent>;
 };
 
 export default HomePage;
